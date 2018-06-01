@@ -720,8 +720,7 @@ def webserver(args):
             '-t', str(worker_timeout),
             '-b', args.hostname + ':' + str(args.port),
             '-n', 'airflow-webserver',
-            '-p', str(pid),
-            '-c', 'airflow.www.gunicorn_config'
+            '-p', str(pid)
         ]
 
         if args.access_logfile:
