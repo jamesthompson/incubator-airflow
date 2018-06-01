@@ -206,7 +206,12 @@ def do_setup():
         package_data={'': ['airflow/alembic.ini', "airflow/git_version"]},
         include_package_data=True,
         zip_safe=False,
-        scripts=['airflow/bin/airflow'],
+        scripts=[
+            'airflow/bin/airflow',
+            'airflow/security/utils.py',
+            'airflow/security/kerberos.py',
+            'airflow/www/gunicorn_config.py'
+        ],
         install_requires=[
             'alembic>=0.8.3, <0.9',
             'bleach==2.1.2',
